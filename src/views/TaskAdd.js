@@ -23,7 +23,7 @@ class TaskAdd extends Component {
   };
   add = () => {
     const { name } = this.state;
-    if (name.length < 3) return;
+    if (name.length < 3) return alert('the task must be min. 3 characters');
     this.props.addTask(name);
     this.setState({
       name: '',

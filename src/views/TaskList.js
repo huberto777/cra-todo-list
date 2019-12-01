@@ -65,7 +65,7 @@ class TaskList extends Component {
   updateTask = e => {
     e.preventDefault();
     const updatedTask = e.target.updatedTask.value;
-    if (updatedTask.length < 3) return;
+    if (updatedTask.length < 3) return alert('the task must be min. 3 characters');
     this.setState({
       tasks: this.state.tasks.map(task => {
         if (task.id === this.state.id) {
@@ -105,7 +105,7 @@ class TaskList extends Component {
     };
     this.setState({
       tasks: [...tasks, task],
-      id: this.state.id + 1
+      id: this.state.id + 1,
     });
   };
   render() {
