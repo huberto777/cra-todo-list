@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.js": "/cra-todo-list/static/js/main.01e3e631.chunk.js",
+    "main.js.map": "/cra-todo-list/static/js/main.01e3e631.chunk.js.map",
+    "runtime-main.js": "/cra-todo-list/static/js/runtime-main.6f1f25b0.js",
+    "runtime-main.js.map": "/cra-todo-list/static/js/runtime-main.6f1f25b0.js.map",
+    "static/js/2.8dc9f97a.chunk.js": "/cra-todo-list/static/js/2.8dc9f97a.chunk.js",
+    "static/js/2.8dc9f97a.chunk.js.map": "/cra-todo-list/static/js/2.8dc9f97a.chunk.js.map",
+    "index.html": "/cra-todo-list/index.html",
+    "precache-manifest.c8d219ecb150880123fc5fa4a0e6eaf9.js": "/cra-todo-list/precache-manifest.c8d219ecb150880123fc5fa4a0e6eaf9.js",
+    "service-worker.js": "/cra-todo-list/service-worker.js",
+    "static/media/magnifier.svg": "/cra-todo-list/static/media/magnifier.a14461b8.svg",
+    "static/media/pen.svg": "/cra-todo-list/static/media/pen.84b70f8a.svg",
+    "static/media/rubbish-bin.svg": "/cra-todo-list/static/media/rubbish-bin.5866c2c6.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6f1f25b0.js",
+    "static/js/2.8dc9f97a.chunk.js",
+    "static/js/main.01e3e631.chunk.js"
+  ]
+}
