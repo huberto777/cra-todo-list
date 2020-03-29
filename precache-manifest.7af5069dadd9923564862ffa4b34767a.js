@@ -1,19 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6b840bcc282b1f8526bbbe9c79ab1658",
+    "revision": "b94ec66b786bd839bafba30cf6fa1403",
     "url": "/cra-todo-list/index.html"
   },
   {
-    "revision": "79dddeec807bf067c538",
-    "url": "/cra-todo-list/static/js/2.8dc9f97a.chunk.js"
+    "revision": "577e78c4197ba1d51a91",
+    "url": "/cra-todo-list/static/js/2.aa5638e8.chunk.js"
   },
   {
-    "revision": "04833308f65c7a000d1c",
-    "url": "/cra-todo-list/static/js/main.01e3e631.chunk.js"
+    "revision": "216e537bacc64f9dbaabd26649a9ab95",
+    "url": "/cra-todo-list/static/js/2.aa5638e8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "20c1fdf4688fefdd6d3a",
-    "url": "/cra-todo-list/static/js/runtime-main.6f1f25b0.js"
+    "revision": "8bf4ffda15d88d65335c",
+    "url": "/cra-todo-list/static/js/main.44a75f16.chunk.js"
+  },
+  {
+    "revision": "5220a4ba917de3a1d5dc",
+    "url": "/cra-todo-list/static/js/runtime-main.f14419f4.js"
   },
   {
     "revision": "a14461b86078261a696a425d13ffe612",
