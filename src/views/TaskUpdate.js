@@ -21,7 +21,7 @@ class TaskUpdate extends Component {
   update = () => {
     const { name } = this.state;
     const { id, updateTask } = this.props;
-    if(name.lenght < 3) return;
+    if(name.lengh < 3) return;
     updateTask(id, { id, name });
   };
   render() {
