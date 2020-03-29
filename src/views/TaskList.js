@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import TaskItem from './TaskItem';
 import Heading from 'components/atoms/Heading/Heading';
-import Input from 'components/atoms/Input/Input';
-import Button from 'components/atoms/Button/Button';
+import TaskItem from './TaskItem';
 import TaskUpdate from './TaskUpdate';
 import TaskSearch from './TaskSearch';
 import TaskAdd from './TaskAdd';
@@ -39,78 +37,59 @@ class TaskList extends Component {
       tasks: [
         { id: 1, name: 'zainstalować linuxa', active: false },
         { id: 2, name: 'zrobić spa w react', active: false },
-        { id: 3, name: 'nauczyć się reduxa', active: false },
+        { id: 3, name: 'nauka reduxa', active: false },
+        { id: 4, name: 'nauka js es6', active: false },
       ],
       edit: false,
       search: '',
-      id: 4,
     };
-    this.editTask = this.editTask.bind(this);
   }
   removeTask = id => {
-    let tasks = [...this.state.tasks];
-    tasks = tasks.filter(task => task.id !== id);
+    this.setState(prevState => ({
+      tasks: prevState.tasks.filter(task => task.id !== id),
+    }));
+  };
+  editTask = ({ id, name }) => {
     this.setState({
-      tasks,
+      id,
+      name,
+      edit: true,
     });
   };
-  editTask() {
-    this.setState({
-      id: arguments[0],
-      name: arguments[1],
-      edit: !this.state.edit,
-    });
-    // console.log(arguments);
-  }
-  updateTask = e => {
-    e.preventDefault();
-    const updatedTask = e.target.updatedTask.value;
-    if (updatedTask.length < 3) return alert('the task must be min. 3 characters');
-    this.setState({
-      tasks: this.state.tasks.map(task => {
-        if (task.id === this.state.id) {
-          task.name = updatedTask;
-        }
-        return task;
-      }),
+  updateTask = (id, updatedTask) => {
+    this.setState(prevState => ({
+      tasks: prevState.tasks.map(task => (task.id === id ? updatedTask : task)),
       edit: false,
-    });
+    }));
   };
   activeMode = id => {
-    this.setState({
-      tasks: this.state.tasks.map(task => {
+    this.setState(prevState => ({
+      tasks: prevState.tasks.map(task => {
         if (task.id === id) {
           task.active = !task.active;
         }
         return task;
       }),
-    });
+    }));
   };
   editMode = () => {
-    this.setState({
-      edit: !this.state.edit,
-    });
+    this.setState(prevState => ({
+      edit: !prevState.edit,
+    }));
   };
   searchTask = e => {
     this.setState({
       search: e.target.value.toLowerCase(),
     });
   };
-  addTask = name => {
-    const { tasks } = this.state;
-    let task = {
-      id: this.state.id,
-      name,
-      active: false,
-    };
-    this.setState({
-      tasks: [...tasks, task],
-      id: this.state.id + 1,
-    });
+  addTask = addedTask => {
+    this.setState(prevState => ({
+      tasks: [addedTask, ...prevState.tasks],
+    }));
   };
   render() {
-    const { edit, search } = this.state;
-    let tasks = this.state.tasks.filter(task => task.name.toLowerCase().includes(search));
+    const { edit, search, id, name } = this.state;
+    const tasks = this.state.tasks.filter(task => task.name.toLowerCase().includes(search));
     return (
       <>
         <StyledHeading big>Task list</StyledHeading>
@@ -121,7 +100,12 @@ class TaskList extends Component {
           </HEADER>
         ) : (
           <HEADER>
-            <TaskUpdate editMode={this.editMode} name={this.state.name} update={this.updateTask} />
+            <TaskUpdate
+              cancelEdit={this.editMode}
+              id={id}
+              name={name}
+              updateTask={this.updateTask}
+            />
           </HEADER>
         )}
         <StyledWrapper>
@@ -147,13 +131,14 @@ class TaskList extends Component {
           <tbody>
             {tasks.map((task, index) => (
               <TaskItem
-                task={task}
+                name={task.name}
+                active={task.active}
                 key={task.id}
                 index={index}
-                removeTask={this.removeTask}
-                editTask={this.editTask}
+                removeTask={() => this.removeTask(task.id)}
+                editTask={() => this.editTask(task)}
                 edit={edit}
-                activeMode={this.activeMode}
+                activeMode={() => this.activeMode(task.id)}
               />
             ))}
           </tbody>
