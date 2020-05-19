@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Input from 'components/atoms/Input/Input';
 import Button from 'components/atoms/Button/Button';
 import styled from 'styled-components';
-import { v4 as uuidv4 } from 'uuid';
 
 const BTN = styled(Button)`
   width: 100px;
@@ -25,7 +24,7 @@ class TaskAdd extends Component {
   add = () => {
     const { name } = this.state;
     if (name.length < 3) return;
-    this.props.addTask({id: uuidv4(), name, active: false});
+    this.props.addTask({ name, active: false });
     this.setState({
       name: '',
     });

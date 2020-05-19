@@ -11,18 +11,19 @@ const BTN = styled(Button)`
 
 class TaskUpdate extends Component {
   state = {
-    name: this.props.name,
+    name: this.props.task.name,
   };
   handleName = e => {
     this.setState({
       name: e.target.value,
     });
   };
-  update = () => {
+  handleSubmit = () => {
     const { name } = this.state;
-    const { id, updateTask } = this.props;
-    if(name.length < 3) return;
-    updateTask(id, { id, name });
+    const { onUpdate, task } = this.props;
+
+    if (name.length < 3) return;
+    onUpdate({ ...task, name });
   };
   render() {
     const { cancelEdit } = this.props;
@@ -30,7 +31,7 @@ class TaskUpdate extends Component {
     return (
       <>
         <Input value={name} onChange={this.handleName} />
-        <BTN type="submit" update onClick={this.update}>
+        <BTN type="submit" update onClick={this.handleSubmit}>
           UPDATE
         </BTN>
         <BTN onClick={cancelEdit} cancel>

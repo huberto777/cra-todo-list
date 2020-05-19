@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import FakeApi from 'api/FakeApi';
 import styled from 'styled-components';
 import Heading from 'components/atoms/Heading/Heading';
 import TaskItem from './TaskItem';
@@ -40,28 +41,55 @@ class TaskList extends Component {
         { id: 3, name: 'nauka reduxa', active: false },
         { id: 4, name: 'nauka js es6', active: false },
       ],
+      loading: true,
+      error: null,
       edit: false,
       search: '',
     };
   }
-  removeTask = id => {
-    this.setState(prevState => ({
-      tasks: prevState.tasks.filter(task => task.id !== id),
-    }));
+
+  // componentDidMount() {
+  //   FakeApi.getAllTasks()
+  //     .then(tasks => this.setState({ tasks }))
+  //     .catch(error => this.state({ error }))
+  //     .finally(() => this.setState({ loading: false }));
+  // }
+
+  addTask = taskToAdd => {
+    FakeApi.addTask(taskToAdd).then(addedTask =>
+      this.setState(prevState => ({
+        tasks: [...prevState.tasks, addedTask],
+      })),
+    );
   };
-  editTask = ({ id, name }) => {
+
+  removeTask = taskToRemove => {
+    FakeApi.removeTask(taskToRemove).then(() =>
+      this.setState(prevState => {
+        const tasks = prevState.tasks.filter(task => task.id !== taskToRemove.id);
+        return { tasks };
+      }),
+    );
+  };
+
+  editTask = task => {
     this.setState({
-      id,
-      name,
+      task,
       edit: true,
     });
   };
-  updateTask = (id, updatedTask) => {
-    this.setState(prevState => ({
-      tasks: prevState.tasks.map(task => (task.id === id ? updatedTask : task)),
-      edit: false,
-    }));
+
+  updateTask = taskToUpdate => {
+    FakeApi.replaceTask(taskToUpdate).then(updatedTask =>
+      this.setState(prevState => {
+        const tasks = prevState.tasks.map(task =>
+          task.id === updatedTask.id ? updatedTask : task,
+        );
+        return { tasks, edit: false };
+      }),
+    );
   };
+
   activeMode = id => {
     this.setState(prevState => ({
       tasks: prevState.tasks.map(task => {
@@ -72,23 +100,21 @@ class TaskList extends Component {
       }),
     }));
   };
+
   editMode = () => {
     this.setState(prevState => ({
       edit: !prevState.edit,
     }));
   };
+
   searchTask = e => {
     this.setState({
       search: e.target.value.toLowerCase(),
     });
   };
-  addTask = addedTask => {
-    this.setState(prevState => ({
-      tasks: [addedTask, ...prevState.tasks],
-    }));
-  };
+
   render() {
-    const { edit, search, id, name } = this.state;
+    const { edit, search, task } = this.state;
     const tasks = this.state.tasks.filter(task => task.name.toLowerCase().includes(search));
     return (
       <>
@@ -100,12 +126,7 @@ class TaskList extends Component {
           </HEADER>
         ) : (
           <HEADER>
-            <TaskUpdate
-              cancelEdit={this.editMode}
-              id={id}
-              name={name}
-              updateTask={this.updateTask}
-            />
+            <TaskUpdate cancelEdit={this.editMode} task={task} onUpdate={this.updateTask} />
           </HEADER>
         )}
         <StyledWrapper>
@@ -135,7 +156,7 @@ class TaskList extends Component {
                 active={task.active}
                 key={task.id}
                 index={index}
-                removeTask={() => this.removeTask(task.id)}
+                removeTask={() => this.removeTask(task)}
                 editTask={() => this.editTask(task)}
                 edit={edit}
                 activeMode={() => this.activeMode(task.id)}
