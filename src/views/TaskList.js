@@ -48,12 +48,12 @@ class TaskList extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   FakeApi.getAllTasks()
-  //     .then(tasks => this.setState({ tasks }))
-  //     .catch(error => this.state({ error }))
-  //     .finally(() => this.setState({ loading: false }));
-  // }
+  componentDidMount() {
+    FakeApi.getAllTasks()
+      .then(tasks => this.setState({ tasks }))
+      .catch(error => this.state({ error }))
+      .finally(() => this.setState({ loading: false }));
+  }
 
   addTask = taskToAdd => {
     FakeApi.addTask(taskToAdd).then(addedTask =>
