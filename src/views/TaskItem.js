@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import ButtonIcon from 'components/atoms/ButtonIcon/ButtonIcon';
 import penIcon from 'assets/icons/pen.svg';
 import removeIcon from 'assets/icons/rubbish-bin.svg';
+import TaskUpdate from './TaskUpdate';
 
 const TR = styled.tr`
   height: 35px;
@@ -20,7 +21,18 @@ const StyledButtonIcon = styled(ButtonIcon)`
   display: block;
 `;
 
-const TaskItem = ({ index, name, active, editTask, removeTask, edit, activeMode }) => {
+const TaskItem = ({
+  index,
+  task,
+  currentEditTask,
+  editMode,
+  onDelete,
+  onEdit,
+  onActive,
+  onUpdate,
+  onCancel,
+}) => {
+  const { id, name, active } = task;
   const style = {};
   const style2 = { width: '15px' };
   if (active) {
@@ -29,23 +41,32 @@ const TaskItem = ({ index, name, active, editTask, removeTask, edit, activeMode 
     style.color = 'red';
   }
   return (
-    <TR style={style}>
-      <TD style={style2}>{index + 1}.</TD>
-      <TD>
-        <input type="checkbox" defaultChecked={active} onChange={activeMode} disabled={edit} />
-        {name}
-      </TD>
-      {edit || (
-        <>
-          <TD style={style2}>
-            <StyledButtonIcon onClick={editTask} icon={penIcon} edit />
+    <>
+      {currentEditTask === id ? (
+        <TR style={style}>
+          <TaskUpdate onCancel={onCancel} task={task} onUpdate={onUpdate} index={index} />
+        </TR>
+      ) : (
+        <TR style={style}>
+          <TD style={style2}>{index + 1}.</TD>
+          <TD>
+            <input
+              type="checkbox"
+              defaultChecked={active}
+              onChange={onActive}
+              disabled={editMode}
+            />
+            {name}
           </TD>
           <TD style={style2}>
-            <StyledButtonIcon onClick={removeTask} icon={removeIcon} del />
+            <StyledButtonIcon onClick={onEdit} icon={penIcon} disabled={editMode} edit />
           </TD>
-        </>
+          <TD style={style2}>
+            <StyledButtonIcon onClick={onDelete} icon={removeIcon} disabled={editMode} del />
+          </TD>
+        </TR>
       )}
-    </TR>
+    </>
   );
 };
 

@@ -3,7 +3,6 @@ import FakeApi from 'api/FakeApi';
 import styled from 'styled-components';
 import Heading from 'components/atoms/Heading/Heading';
 import TaskItem from './TaskItem';
-import TaskUpdate from './TaskUpdate';
 import TaskSearch from './TaskSearch';
 import TaskAdd from './TaskAdd';
 
@@ -43,8 +42,9 @@ class TaskList extends Component {
       ],
       loading: true,
       error: null,
-      edit: false,
+      editMode: false,
       search: '',
+      currentEditTask: null,
     };
   }
 
@@ -75,7 +75,8 @@ class TaskList extends Component {
   editTask = task => {
     this.setState({
       task,
-      edit: true,
+      editMode: true,
+      currentEditTask: task.id,
     });
   };
 
@@ -85,12 +86,12 @@ class TaskList extends Component {
         const tasks = prevState.tasks.map(task =>
           task.id === updatedTask.id ? updatedTask : task,
         );
-        return { tasks, edit: false };
+        return { tasks, editMode: false, currentEditTask: null };
       }),
     );
   };
 
-  activeMode = id => {
+  activeMode = ({ id }) => {
     this.setState(prevState => ({
       tasks: prevState.tasks.map(task => {
         if (task.id === id) {
@@ -101,10 +102,11 @@ class TaskList extends Component {
     }));
   };
 
-  editMode = () => {
-    this.setState(prevState => ({
-      edit: !prevState.edit,
-    }));
+  cancelEditMode = () => {
+    this.setState({
+      editMode: false,
+      currentEditTask: null,
+    });
   };
 
   searchTask = e => {
@@ -114,19 +116,15 @@ class TaskList extends Component {
   };
 
   render() {
-    const { edit, search, task } = this.state;
+    const { editMode, search, currentEditTask } = this.state;
     const tasks = this.state.tasks.filter(task => task.name.toLowerCase().includes(search));
     return (
       <>
         <StyledHeading big>Task list</StyledHeading>
-        {!edit ? (
+        {!editMode && (
           <HEADER>
             <TaskAdd addTask={this.addTask} />
             <TaskSearch change={this.searchTask} />
-          </HEADER>
-        ) : (
-          <HEADER>
-            <TaskUpdate cancelEdit={this.editMode} task={task} onUpdate={this.updateTask} />
           </HEADER>
         )}
         <StyledWrapper>
@@ -135,12 +133,8 @@ class TaskList extends Component {
               <TR>
                 <TH>#</TH>
                 <TH>task</TH>
-                {edit || (
-                  <>
-                    <TH>edit</TH>
-                    <TH>del</TH>
-                  </>
-                )}
+                <TH>edit</TH>
+                <TH>del</TH>
               </TR>
             ) : (
               <TR>
@@ -152,14 +146,16 @@ class TaskList extends Component {
           <tbody>
             {tasks.map((task, index) => (
               <TaskItem
-                name={task.name}
-                active={task.active}
                 key={task.id}
                 index={index}
-                removeTask={() => this.removeTask(task)}
-                editTask={() => this.editTask(task)}
-                edit={edit}
-                activeMode={() => this.activeMode(task.id)}
+                task={task}
+                currentEditTask={currentEditTask}
+                editMode={editMode}
+                onDelete={() => this.removeTask(task)}
+                onEdit={() => this.editTask(task)}
+                onActive={() => this.activeMode(task)}
+                onUpdate={this.updateTask}
+                onCancel={this.cancelEditMode}
               />
             ))}
           </tbody>
