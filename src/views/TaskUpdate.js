@@ -49,10 +49,10 @@ class TaskUpdate extends Component {
           <StyledInput value={name} onChange={this.handleName} />
         </TD>
         <TD style={style2}>
-          <StyledButtonIcon type="submit" onClick={this.handleSubmit} icon={penIcon} del />
+          <StyledButtonIcon type="submit" onClick={this.handleSubmit} icon={penIcon} update />
         </TD>
         <TD style={style2}>
-          <StyledButtonIcon type="submit" onClick={onCancel} icon={iksIcon} edit />
+          <StyledButtonIcon type="submit" onClick={onCancel} icon={iksIcon} add />
         </TD>
       </>
     );
