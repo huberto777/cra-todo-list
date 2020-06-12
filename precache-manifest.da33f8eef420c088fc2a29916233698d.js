@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "589defc9b997b47ba76fc4a4bd0f6d1d",
+    "revision": "d5254f570d8b171907490ec99a9263d2",
     "url": "/cra-todo-list/index.html"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cra-todo-list/static/js/2.eaef5278.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "6833cffbf015c37cdd47",
-    "url": "/cra-todo-list/static/js/main.c276448a.chunk.js"
+    "revision": "25d3059ad5e0020369e7",
+    "url": "/cra-todo-list/static/js/main.89b4dbb3.chunk.js"
   },
   {
     "revision": "5220a4ba917de3a1d5dc",
