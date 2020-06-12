@@ -116,15 +116,16 @@ class TaskList extends Component {
   };
 
   render() {
-    const { editMode, search, currentEditTask } = this.state;
+    const { editMode, search, currentEditTask, loading } = this.state;
     const tasks = this.state.tasks.filter(task => task.name.toLowerCase().includes(search));
     return (
       <>
-        <StyledHeading big>Task list</StyledHeading>
+        <StyledHeading big>Task List</StyledHeading>
         {!editMode && (
           <HEADER>
             <TaskAdd addTask={this.addTask} />
-            <TaskSearch change={this.searchTask} />
+            <TaskSearch onChange={this.searchTask} />
+            {loading ? 'tasks are loading...' : null}
           </HEADER>
         )}
         <StyledWrapper>

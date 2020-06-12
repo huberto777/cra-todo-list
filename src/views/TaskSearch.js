@@ -1,9 +1,9 @@
 import React from 'react';
 import Input from 'components/atoms/Input/Input';
 
-const TaskSearch = ({change}) => (
+const TaskSearch = ({ onChange }) => (
   <>
-    <Input placeholder="search" search onChange={change} />
+    <Input placeholder="search" search onChange={onChange} />
   </>
 );
 
