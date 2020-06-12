@@ -19,7 +19,8 @@ const TD = styled.td`
 const StyledInput = styled(Input)`
   padding: 0 0 0 10px;
   margin: 0;
-  width: 650px;
+  width: 100%;
+  font-size: ${({ theme }) => theme.fontSize.s};
 `;
 
 class TaskUpdate extends Component {
@@ -49,10 +50,10 @@ class TaskUpdate extends Component {
           <StyledInput value={name} onChange={this.handleName} />
         </TD>
         <TD style={style2}>
-          <StyledButtonIcon type="submit" onClick={this.handleSubmit} icon={penIcon} update />
+          <StyledButtonIcon type="submit" onClick={this.handleSubmit} icon={penIcon} add />
         </TD>
         <TD style={style2}>
-          <StyledButtonIcon type="submit" onClick={onCancel} icon={iksIcon} add />
+          <StyledButtonIcon type="submit" onClick={onCancel} icon={iksIcon} cancel />
         </TD>
       </>
     );

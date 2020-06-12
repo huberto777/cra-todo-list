@@ -1,13 +1,6 @@
 import React, { Component } from 'react';
 import Input from 'components/atoms/Input/Input';
 import Button from 'components/atoms/Button/Button';
-import styled from 'styled-components';
-
-const BTN = styled(Button)`
-  width: 100px;
-  height: 50px;
-  margin-right: 10px;
-`;
 
 class TaskAdd extends Component {
   constructor(props) {
@@ -34,7 +27,7 @@ class TaskAdd extends Component {
     return (
       <>
         <Input placeholder="add task" value={name} onChange={this.handleName} />
-        <BTN onClick={this.add}>ADD</BTN>
+        <Button onClick={this.add}>ADD</Button>
       </>
     );
   }

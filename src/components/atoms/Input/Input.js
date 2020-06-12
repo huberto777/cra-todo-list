@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 import magnifierIcon from 'assets/icons/magnifier.svg';
 
 const Input = styled.input`
-  padding: 15px 30px;
+  padding: 5px 10px 5px 30px;
   font-size: ${({ theme }) => theme.fontSize.s};
   font-weight: ${({ theme }) => theme.regular};
   background-color: ${({ theme }) => theme.grey400};
@@ -10,6 +10,7 @@ const Input = styled.input`
   border: none;
   color: ${({ theme }) => theme.grey200};
   margin-bottom: 10px;
+  width: 40%;
 
   ::placeholder {
     text-transform: uppercase;

@@ -26,7 +26,11 @@ const ButtonIcon = styled.button`
     css`
       background-color: hsl(122, 100%, 58%);
     `}
-
+    ${({ cancel }) =>
+      cancel &&
+      css`
+        background-color: hsl(0, 6%, 68%);
+      `}
 `;
 
 export default ButtonIcon;

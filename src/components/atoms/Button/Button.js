@@ -2,16 +2,15 @@ import styled, { css } from 'styled-components';
 
 const Button = styled.button`
   background-color: ${({ theme }) => theme.add}; /* props.theme -> CONTEXT API ThemeProvider */
-  width: 50px;
-  height: 30px;
+  width: 20%;
+  font-size: ${({ theme }) => theme.fontSize.s};
   border: none;
   border-radius: 50px;
   font-family: 'Montserrat';
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: ${({ theme }) => theme.regular};
   text-transform: uppercase;
   color: white;
-  
+  padding: 5px 10px 5px 10px;
 
   ${({ del }) =>
     del &&
