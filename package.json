@@ -20,6 +20,9 @@
     "eject": "react-scripts eject",
     "storybook": "start-storybook"
   },
+  "eslinytConfig": {
+    "extends": "react-app"
+  },
   "browserslist": {
     "production": [
       ">0.2%",
