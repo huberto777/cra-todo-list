@@ -43,11 +43,11 @@ const TaskItem = ({
   return (
     <>
       {currentEditTask === id ? (
-        <TR style={style}>
+        <TR>
           <TaskUpdate onCancel={onCancel} task={task} onUpdate={onUpdate} index={index} />
         </TR>
       ) : (
-        <TR style={style}>
+        <TR style={style} className={`${editMode ? 'inactive' : ''}`}>
           <TD style={style2}>{index + 1}.</TD>
           <TD>
             <input
