@@ -3,7 +3,6 @@ import FakeApi from 'api/FakeApi';
 import styled from 'styled-components';
 import Heading from 'components/atoms/Heading/Heading';
 import TaskItem from './TaskItem';
-import TaskSearch from './TaskSearch';
 import TaskAdd from './TaskAdd';
 
 const StyledWrapper = styled.table`
@@ -123,8 +122,7 @@ class TaskList extends Component {
         <StyledHeading big>Task List</StyledHeading>
         {!editMode && (
           <HEADER>
-            <TaskAdd addTask={this.addTask} />
-            <TaskSearch onChange={this.searchTask} />
+            <TaskAdd addTask={this.addTask} onChange={this.searchTask} />
           </HEADER>
         )}
         {loading ? (
