@@ -2,15 +2,19 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'theme/GlobalStyle';
 import { theme } from 'theme/mainTheme';
-import TaskList from './TaskList';
+import ErrorBoundary from './ErrorBoundary';
+
+const TaskList = React.lazy(() => import('./TaskList'));
 
 const Root = () => (
-  <div>
+  <ErrorBoundary>
     <GlobalStyle />
     <ThemeProvider theme={theme}>
-      <TaskList />
+      <React.Suspense fallback="... Loading">
+        <TaskList />
+      </React.Suspense>
     </ThemeProvider>
-  </div>
+  </ErrorBoundary>
 );
 
 export default Root;

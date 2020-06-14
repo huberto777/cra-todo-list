@@ -125,42 +125,45 @@ class TaskList extends Component {
           <HEADER>
             <TaskAdd addTask={this.addTask} />
             <TaskSearch onChange={this.searchTask} />
-            {loading ? 'tasks are loading...' : null}
           </HEADER>
         )}
-        <StyledWrapper>
-          <thead>
-            {tasks.length !== 0 ? (
-              <TR>
-                <TH>#</TH>
-                <TH>task</TH>
-                <TH>edit</TH>
-                <TH>del</TH>
-              </TR>
-            ) : (
-              <TR>
-                <TH>brak zadań</TH>
-              </TR>
-            )}
-          </thead>
+        {loading ? (
+          'tasks are loading...'
+        ) : (
+          <StyledWrapper>
+            <thead>
+              {tasks.length !== 0 ? (
+                <TR>
+                  <TH>#</TH>
+                  <TH>task</TH>
+                  <TH>edit</TH>
+                  <TH>del</TH>
+                </TR>
+              ) : (
+                <TR>
+                  <TH>brak zadań</TH>
+                </TR>
+              )}
+            </thead>
 
-          <tbody>
-            {tasks.map((task, index) => (
-              <TaskItem
-                key={task.id}
-                index={index}
-                task={task}
-                currentEditTask={currentEditTask}
-                editMode={editMode}
-                onDelete={() => this.removeTask(task)}
-                onEdit={() => this.editTask(task)}
-                onActive={() => this.activeMode(task)}
-                onUpdate={this.updateTask}
-                onCancel={this.cancelEditMode}
-              />
-            ))}
-          </tbody>
-        </StyledWrapper>
+            <tbody>
+              {tasks.map((task, index) => (
+                <TaskItem
+                  key={task.id}
+                  index={index}
+                  task={task}
+                  currentEditTask={currentEditTask}
+                  editMode={editMode}
+                  onDelete={() => this.removeTask(task)}
+                  onEdit={() => this.editTask(task)}
+                  onActive={() => this.activeMode(task)}
+                  onUpdate={this.updateTask}
+                  onCancel={this.cancelEditMode}
+                />
+              ))}
+            </tbody>
+          </StyledWrapper>
+        )}
       </>
     );
   }
