@@ -1,23 +1,27 @@
 {
   "files": {
-    "main.js": "/cra-todo-list/static/js/main.89b4dbb3.chunk.js",
-    "main.js.map": "/cra-todo-list/static/js/main.89b4dbb3.chunk.js.map",
-    "runtime-main.js": "/cra-todo-list/static/js/runtime-main.f14419f4.js",
-    "runtime-main.js.map": "/cra-todo-list/static/js/runtime-main.f14419f4.js.map",
-    "static/js/2.eaef5278.chunk.js": "/cra-todo-list/static/js/2.eaef5278.chunk.js",
-    "static/js/2.eaef5278.chunk.js.map": "/cra-todo-list/static/js/2.eaef5278.chunk.js.map",
+    "main.js": "/cra-todo-list/static/js/main.2a336d80.chunk.js",
+    "main.js.map": "/cra-todo-list/static/js/main.2a336d80.chunk.js.map",
+    "runtime-main.js": "/cra-todo-list/static/js/runtime-main.a3bf95f0.js",
+    "runtime-main.js.map": "/cra-todo-list/static/js/runtime-main.a3bf95f0.js.map",
+    "static/js/2.229b2649.chunk.js": "/cra-todo-list/static/js/2.229b2649.chunk.js",
+    "static/js/2.229b2649.chunk.js.map": "/cra-todo-list/static/js/2.229b2649.chunk.js.map",
+    "static/js/3.95a4a559.chunk.js": "/cra-todo-list/static/js/3.95a4a559.chunk.js",
+    "static/js/3.95a4a559.chunk.js.map": "/cra-todo-list/static/js/3.95a4a559.chunk.js.map",
+    "static/js/4.a1f04396.chunk.js": "/cra-todo-list/static/js/4.a1f04396.chunk.js",
+    "static/js/4.a1f04396.chunk.js.map": "/cra-todo-list/static/js/4.a1f04396.chunk.js.map",
     "index.html": "/cra-todo-list/index.html",
-    "precache-manifest.da33f8eef420c088fc2a29916233698d.js": "/cra-todo-list/precache-manifest.da33f8eef420c088fc2a29916233698d.js",
+    "precache-manifest.b45d43b8b143496d77ab539d3d609662.js": "/cra-todo-list/precache-manifest.b45d43b8b143496d77ab539d3d609662.js",
     "service-worker.js": "/cra-todo-list/service-worker.js",
-    "static/js/2.eaef5278.chunk.js.LICENSE.txt": "/cra-todo-list/static/js/2.eaef5278.chunk.js.LICENSE.txt",
+    "static/js/2.229b2649.chunk.js.LICENSE.txt": "/cra-todo-list/static/js/2.229b2649.chunk.js.LICENSE.txt",
     "static/media/iks.svg": "/cra-todo-list/static/media/iks.e9cecb62.svg",
     "static/media/magnifier.svg": "/cra-todo-list/static/media/magnifier.a14461b8.svg",
     "static/media/pen.svg": "/cra-todo-list/static/media/pen.84b70f8a.svg",
     "static/media/rubbish-bin.svg": "/cra-todo-list/static/media/rubbish-bin.5866c2c6.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.f14419f4.js",
-    "static/js/2.eaef5278.chunk.js",
-    "static/js/main.89b4dbb3.chunk.js"
+    "static/js/runtime-main.a3bf95f0.js",
+    "static/js/2.229b2649.chunk.js",
+    "static/js/main.2a336d80.chunk.js"
   ]
 }

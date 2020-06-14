@@ -1,23 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d5254f570d8b171907490ec99a9263d2",
+    "revision": "bdfd1b494176833cc34d0d58e5af77cd",
     "url": "/cra-todo-list/index.html"
   },
   {
-    "revision": "36ee5596c88cc7406820",
-    "url": "/cra-todo-list/static/js/2.eaef5278.chunk.js"
+    "revision": "94b649734cd76dbfb394",
+    "url": "/cra-todo-list/static/js/2.229b2649.chunk.js"
   },
   {
     "revision": "216e537bacc64f9dbaabd26649a9ab95",
-    "url": "/cra-todo-list/static/js/2.eaef5278.chunk.js.LICENSE.txt"
+    "url": "/cra-todo-list/static/js/2.229b2649.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "25d3059ad5e0020369e7",
-    "url": "/cra-todo-list/static/js/main.89b4dbb3.chunk.js"
+    "revision": "ed1cffd8fe79b7506bf3",
+    "url": "/cra-todo-list/static/js/3.95a4a559.chunk.js"
   },
   {
-    "revision": "5220a4ba917de3a1d5dc",
-    "url": "/cra-todo-list/static/js/runtime-main.f14419f4.js"
+    "revision": "f20bf2e1234528a6d90b",
+    "url": "/cra-todo-list/static/js/4.a1f04396.chunk.js"
+  },
+  {
+    "revision": "f847b464541dfdd8331b",
+    "url": "/cra-todo-list/static/js/main.2a336d80.chunk.js"
+  },
+  {
+    "revision": "60149631933c3ad24362",
+    "url": "/cra-todo-list/static/js/runtime-main.a3bf95f0.js"
   },
   {
     "revision": "e9cecb620b882c934420a32347a4fb7d",
