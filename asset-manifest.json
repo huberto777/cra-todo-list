@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.js": "/cra-todo-list/static/js/main.31e5062d.chunk.js",
-    "main.js.map": "/cra-todo-list/static/js/main.31e5062d.chunk.js.map",
-    "runtime-main.js": "/cra-todo-list/static/js/runtime-main.74c941a5.js",
-    "runtime-main.js.map": "/cra-todo-list/static/js/runtime-main.74c941a5.js.map",
+    "main.js": "/cra-todo-list/static/js/main.745333a7.chunk.js",
+    "main.js.map": "/cra-todo-list/static/js/main.745333a7.chunk.js.map",
+    "runtime-main.js": "/cra-todo-list/static/js/runtime-main.e8e8f664.js",
+    "runtime-main.js.map": "/cra-todo-list/static/js/runtime-main.e8e8f664.js.map",
     "static/js/2.78b34e30.chunk.js": "/cra-todo-list/static/js/2.78b34e30.chunk.js",
     "static/js/2.78b34e30.chunk.js.map": "/cra-todo-list/static/js/2.78b34e30.chunk.js.map",
     "static/js/3.58def62e.chunk.js": "/cra-todo-list/static/js/3.58def62e.chunk.js",
     "static/js/3.58def62e.chunk.js.map": "/cra-todo-list/static/js/3.58def62e.chunk.js.map",
-    "static/js/4.7f6c9b38.chunk.js": "/cra-todo-list/static/js/4.7f6c9b38.chunk.js",
-    "static/js/4.7f6c9b38.chunk.js.map": "/cra-todo-list/static/js/4.7f6c9b38.chunk.js.map",
+    "static/js/4.11b74a11.chunk.js": "/cra-todo-list/static/js/4.11b74a11.chunk.js",
+    "static/js/4.11b74a11.chunk.js.map": "/cra-todo-list/static/js/4.11b74a11.chunk.js.map",
     "index.html": "/cra-todo-list/index.html",
-    "precache-manifest.559f949314b9fb8aa764d50bbb409c49.js": "/cra-todo-list/precache-manifest.559f949314b9fb8aa764d50bbb409c49.js",
+    "precache-manifest.c59f9423c02e0e1b17c5737117d1a64d.js": "/cra-todo-list/precache-manifest.c59f9423c02e0e1b17c5737117d1a64d.js",
     "service-worker.js": "/cra-todo-list/service-worker.js",
     "static/js/2.78b34e30.chunk.js.LICENSE.txt": "/cra-todo-list/static/js/2.78b34e30.chunk.js.LICENSE.txt",
     "static/js/3.58def62e.chunk.js.LICENSE.txt": "/cra-todo-list/static/js/3.58def62e.chunk.js.LICENSE.txt",
@@ -21,8 +21,8 @@
     "static/media/rubbish-bin.svg": "/cra-todo-list/static/media/rubbish-bin.5866c2c6.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.74c941a5.js",
+    "static/js/runtime-main.e8e8f664.js",
     "static/js/2.78b34e30.chunk.js",
-    "static/js/main.31e5062d.chunk.js"
+    "static/js/main.745333a7.chunk.js"
   ]
 }
